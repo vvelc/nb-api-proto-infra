@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nb-api-proto-stage
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/vvelc/nb-api-proto-infra'
+    targetRevision: HEAD
+    path: 'charts/nb-api-proto'
+    helm:
+      valueFiles:
+        - values-stage.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

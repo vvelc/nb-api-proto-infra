@@ -1,0 +1,5 @@
+apiVersion: v2
+name: nb-api-proto
+description: A Helm chart for deploying an NB API Prototype
+version: 0.1.0
+appVersion: "1.0.0"
