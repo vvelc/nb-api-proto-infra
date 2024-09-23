@@ -1,12 +1,12 @@
 replicaCount: 5
 image:
-  repository: vvelc/nb-api-proto
-  tag: "main-latest"
-  pullPolicy: Always
+    repository: vvelc/nb-api-proto
+    tag: "main-latest"
+    pullPolicy: Always
 
 service:
-  type: ClusterIP
-  port: 80
+    type: ClusterIP
+    port: 80
 
 ingress:
-  enabled: false
+    enabled: false
