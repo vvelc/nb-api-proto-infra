@@ -27,6 +27,15 @@ autoscaling:
     maxReplicas: 10
     targetCPUUtilizationPercentage: 80
 
+server:
+  ingress:
+    enabled: true
+    hosts:
+      - argocd.local
+    paths: ["/"]
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+
 nodeSelector: {}
 
 tolerations: []

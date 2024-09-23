@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: nb-api-proto
+    name: {{ .Release.Name }}
 spec:
     replicas: {{ .Values.replicaCount }}
     selector:
         matchLabels:
-            app: nb-api-proto
+            app: {{ .Release.Name }}
     template:
         metadata:
             labels:
-                app: nb-api-proto
+                app: {{ .Release.Name }}
         spec:
             containers:
-                - name: nb-api-proto
+                - name: {{ .Release.Name }}
                   image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
                   ports:
                       - containerPort: 3000
