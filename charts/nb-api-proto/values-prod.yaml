@@ -1,7 +1,7 @@
 replicaCount: 5
 image:
   repository: vvelc/nb-api-proto
-  tag: "prod-latest"
+  tag: "main-latest"
   pullPolicy: Always
 
 service:
