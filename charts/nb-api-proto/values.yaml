@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: vvelc/neighbor-prototype
+  repository: vvelc/nb-api-proto
   tag: "latest"
   pullPolicy: IfNotPresent
 
