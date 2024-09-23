@@ -4,6 +4,7 @@ metadata:
   name: {{ .Release.Name }}-ingress
   annotations:
     kubernetes.io/ingress.class: "nginx"  # Asegúrate de tener un controlador de Ingress
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: {{ .Values.ingress.host }}  # Define el host para este entorno
