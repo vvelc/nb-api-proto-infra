@@ -5,19 +5,22 @@ metadata:
     namespace: argocd
 spec:
     project: default
-    source:
-        repoURL: "https://github.com/vvelc/nb-api-proto-infra"
-        targetRevision: HEAD
-        path: "charts/nb-api-proto"
-        helm:
-            valueFiles:
-                - values-prod.yaml
+    sources:
+        - repoURL: "https://github.com/vvelc/nb-api-proto-infra"
+          targetRevision: HEAD
+          path: "charts/nb-api-proto"
+          helm:
+              valueFiles:
+                  - values-prod.yaml
+        - repoURL: "https://github.com/vvelc/nb-api-proto"
+          targetRevision: main
+          ref: values
     destination:
         server: "https://kubernetes.default.svc"
-        namespace: production
+        namespace: prod
     syncPolicy:
         automated:
             prune: true
             selfHeal: true
         syncOptions:
-        - CreateNamespace=true
+            - CreateNamespace=true
